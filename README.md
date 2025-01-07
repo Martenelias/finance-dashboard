@@ -2,6 +2,8 @@
 
 [Figma link](https://www.figma.com/design/GDL17C0Mh9nyxQ7sk4L2BA/Marten-Pennywise-UI-Kit-(Copy)?node-id=72-442&t=QGfZWuUzE3UIrcUj-1)
 
+[API repository](https://github.com/Martenelias/finance-api)
+
 ## Overview
 
 **Pennywise** is a personal budgeting and financial tracking web application designed to help users manage their income, expenses, and savings efficiently. With features like monthly reports, analytics, and real-time insights into financial habits, Pennywise empowers users to take control of their finances and achieve their savings goals.
