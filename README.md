@@ -52,7 +52,7 @@ git clone https://github.com/yourusername/yourrepository.git
 - **Select Folder**
 
 ```bash
-cd 07_homework
+cd dashboard
 ```
 
 - **Install Packages**
