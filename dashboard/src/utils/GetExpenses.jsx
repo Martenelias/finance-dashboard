@@ -19,6 +19,7 @@ const ExpensesList = () => {
   const [expenses, setExpenses] = useState([]);
 
   useEffect(() => {
+    console.log('fetching expenses');
     const fetchExpenses = async () => {
       try {
         const token = localStorage.getItem('token');
@@ -81,9 +82,9 @@ const ExpensesList = () => {
       {expenses.length > 0 ? (
         expenses.map((expense) => (
           <li key={expense.id} className='flex justify-between w-full text-sm lg:text-base border-b py-2'>
-            <p>{expense.description}</p>
-            <p>€{expense.amount}</p>
-            <p>{new Date(expense.transaction_date).toLocaleDateString()}</p>
+            <p className='w-full'>{expense.description}</p>
+            <p className='w-full'>€{expense.amount}</p>
+            <p className='w-full'>{new Date(expense.transaction_date).toLocaleDateString()}</p>
             <button onClick={() => handleDelete(expense.id)}><Trash2 color='#963c3c' /></button>
           </li>
         ))

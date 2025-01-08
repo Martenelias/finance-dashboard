@@ -1,8 +1,11 @@
 import { Search, TrendingUp, TrendingDown, Calendar, ChevronDown } from'lucide-react';
 import { NavLink } from 'react-router-dom';
-import BudgetCard from '../components/BudgetCard';
-import TransactionsCard from '../components/TransactionsCard';
-import AnalyticsCard from '../components/AnalyticsCard';
+import BudgetCard from '../components/Dashboard/BudgetCard';
+import TransactionsCard from '../components/Dashboard/TransactionsCard';
+import AnalyticsCard from '../components/Dashboard/AnalyticsCard';
+import DashboardIncome from '../components/Dashboard/IncomeAndExpense/DashboardIncome';
+import DashboardExpenses from '../components/Dashboard/IncomeAndExpense/DashboardExpense';
+import DashboardBalance from '../components/Dashboard/IncomeAndExpense/DashboardBalance';
 
 const Dashboard = () => {
 
@@ -26,10 +29,7 @@ const Dashboard = () => {
               <div className='bg-primary-500 text-primary-50 rounded-md p-2'>
                 <TrendingUp size={40} />
               </div>
-              <div className='flex flex-col justify-evenly h-full items-center'>
-                <p className='text-background-200 lg:text-sm text-base'>Total Income</p>
-                <p className='text-primary-50 lg:text-base xl:text-lg text-lg'>€1500.00</p>
-              </div>
+              <DashboardIncome />
               <div className='p-2 bg-primary-900 rounded-md text-primary-50'>
                 <p>+1.35%</p>
               </div>
@@ -40,10 +40,7 @@ const Dashboard = () => {
               <div className='bg-secondary-500 text-primary-50 rounded-md p-2'>
                 <TrendingDown size={40} />
               </div>
-              <div className='flex flex-col justify-evenly h-full items-center'>
-                <p className='text-background-200 lg:text-sm text-base'>Total Expense</p>
-                <p className='text-primary-50 lg:text-base xl:text-lg text-lg'>€900.00</p>
-              </div>
+              <DashboardExpenses />
               <div className='p-2 bg-secondary-900 rounded-md text-primary-50'>
                 <p>-1.05%</p>
               </div>
@@ -53,12 +50,9 @@ const Dashboard = () => {
             <div className='p-4 flex flex-col justify-between items-center h-full'>
               <div className='flex justify-evenly items-center w-full'>
                 <p className='text-primary-50 lg:text-base xl:text-lg text-lg'>My Card</p>
-                <p className='flex justify-center items-center lg:text-base xl:text-lg text-lg gap-2 text-background-200'><Calendar />{currentTime}</p>
+                <p className='flex justify-center items-center lg:text-base text-lg gap-2 text-background-200'><Calendar />{currentTime}</p>
               </div>
-              <div className='flex flex-col justify-center items-center'>
-                <p className='text-background-200 lg:text-sm text-base'>Current Balance</p>
-                <p className='text-primary-50 lg:text-base xl:text-lg text-lg'>€2300.00</p>
-              </div>
+              <DashboardBalance />
               <div className=' flex justify-evenly items-center w-full'>
                 <NavLink className='bg-primary-500 rounded-md py-2 px-4 lg:text-sm xl:text-base text-base text-primary-50 hover:bg-primary-700' to='/incomes'>Add Income</NavLink>
                 <NavLink className='bg-secondary-500 rounded-md py-2 px-4 lg:text-sm xl:text-base text-base text-primary-50 hover:bg-secondary-700' to='/expenses'>Add Expense</NavLink>
@@ -97,13 +91,13 @@ const Dashboard = () => {
                     <AnalyticsCard />
                   </div>
                 </div>
-                <div className='flex justify-evenly items-center w-full'>
-                  <p>May</p>
-                  <p>Jun</p>
-                  <p>Jul</p>
-                  <p>Aug</p>
-                  <p>Sept</p>
-                  <p>Okt</p>
+                <div className='flex justify-evenly items-center w-full pl-12 pr-4'>
+                  <p className='w-full'>May</p>
+                  <p className='w-full'>Jun</p>
+                  <p className='w-full'>Jul</p>
+                  <p className='w-full'>Aug</p>
+                  <p className='w-full'>Sept</p>
+                  <p className='w-full'>Okt</p>
                   <p>Nov</p>
                 </div>
               </div>
@@ -125,8 +119,8 @@ const Dashboard = () => {
               </div>
               <div className='flex flex-col justify-between items-center w-full h-full pt-4 gap-4'>
                 <div className=' p-2 flex justify-between items-center w-full text-background-200 border-b border-background-200'>
-                  <p>Description</p>
-                  <p>Amount</p>
+                  <p className='w-full'>Description</p>
+                  <p className='w-full'>Amount</p>
                   <p>Date</p>
                 </div>
                 <div className='w-full h-full'>
