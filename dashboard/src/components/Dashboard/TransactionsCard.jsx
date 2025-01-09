@@ -61,8 +61,8 @@ const LimitedList = () => {
       {recentIncomes.length > 0 ? (
         recentIncomes.map((income) => (
           <li key={income.id} className='flex justify-between w-full text-sm lg:text-base border-b py-2'>
-            <p>{income.description}</p>
-            <p>€{income.amount}</p>
+            <p className='w-full'>{income.description}</p>
+            <p className='w-full'>€{income.amount}</p>
             <p>{new Date(income.transaction_date).toLocaleDateString()}</p>
           </li>
         ))

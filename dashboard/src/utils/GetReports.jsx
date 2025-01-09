@@ -55,9 +55,9 @@ const ReportsList = () => {
       {reports.length > 0 ? (
         reports.map((report) => (
           <li key={report.id} className='flex justify-between w-full text-sm lg:text-base border-b py-2'>
-            <p>{report.month}</p>
-            <p>€{report.totalIncome}</p>
-            <p>€{report.totalExpense}</p>
+            <p className='w-full'>{report.month}</p>
+            <p className='w-full'>€{report.totalIncome}</p>
+            <p className='w-full'>€{report.totalExpense}</p>
             <p>€{report.balance}</p>
           </li>
         ))
@@ -148,15 +148,15 @@ const ReportsByMonth = () => {
       {selectedReport ? (
         <div className='flex flex-col items-center w-full'>
           <div className='flex justify-between w-full text-base lg:text-lg text-background-200 border-b py-4 border-background-200'>
-            <p>Month</p>
-            <p>Total Income</p>
-            <p>Total Expense</p>
+            <p className='w-full'>Month</p>
+            <p className='w-full'>Total Income</p>
+            <p className='w-full'>Total Expense</p>
             <p>Balance</p>
           </div>
           <div className='flex justify-between w-full text-sm lg:text-base py-2'>
-            <p>{selectedReport.month}</p>
-            <p>€{selectedReport.totalIncome}</p>
-            <p>€{selectedReport.totalExpense}</p>
+            <p className='w-full'>{selectedReport.month}</p>
+            <p className='w-full'>€{selectedReport.totalIncome}</p>
+            <p className='w-full'>€{selectedReport.totalExpense}</p>
             <p>€{selectedReport.balance}</p>
           </div>
         </div>
@@ -218,14 +218,14 @@ const SavingsReport = () => {
       {savings.length > 0 ? (
         <ul className='flex flex-col w-full gap-2'>
           <li className='flex justify-between w-full text-base lg:text-lg text-background-200 border-b py-2 border-background-200'>
-            <p>Year</p>
-            <p>Month</p>
+            <p className='w-full'>Year</p>
+            <p className='w-full'>Month</p>
             <p>Savings</p>
           </li>
           {savings.map((saving, index) => (
             <li key={index} className='flex justify-between w-full text-sm lg:text-base py-2'>
-              <p>{saving.year}</p>
-              <p>{saving.month.toString().padStart(2, '0')}</p>
+              <p className='w-full'>{saving.year}</p>
+              <p className='w-full'>{saving.month.toString().padStart(2, '0')}</p>
               <p>€{saving.savings}</p>
             </li>
           ))}
@@ -309,15 +309,15 @@ const YearEndSummary = () => {
         <div className='flex flex-col items-center w-full'>
           <h2 className='text-lg font-semibold text-background-200'>Year-End Summary</h2>
           <div className='flex justify-between w-full text-base lg:text-lg text-background-200 border-b py-4 border-background-200'>
-            <p>Year</p>
-            <p>Total Income</p>
-            <p>Total Expense</p>
+            <p className='w-full'>Year</p>
+            <p className='w-full'>Total Income</p>
+            <p className='w-full'>Total Expense</p>
             <p>Total Savings</p>
           </div>
           <div className='flex justify-between w-full text-sm lg:text-base py-2'>
-            <p>{report.year}</p>
-            <p>€{report.total_income}</p>
-            <p>€{report.total_expense}</p>
+            <p className='w-full'>{report.year}</p>
+            <p className='w-full'>€{report.total_income}</p>
+            <p className='w-full'>€{report.total_expense}</p>
             <p>€{report.total_savings}</p>
           </div>
         </div>

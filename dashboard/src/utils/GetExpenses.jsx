@@ -19,6 +19,7 @@ const ExpensesList = () => {
   const [expenses, setExpenses] = useState([]);
 
   useEffect(() => {
+    console.log('fetching expenses');
     const fetchExpenses = async () => {
       try {
         const token = localStorage.getItem('token');

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import axios from 'axios';
@@ -9,6 +9,19 @@ const Login = ({ setToken, apiUrl}) => {
   const [loading, setLoading] = useState(false); // For loading state
   const [loginSuccess, setLoginSuccess] = useState(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (loginSuccess === false) {
+      const timer = setTimeout(() => {
+        setLoginSuccess(null);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [loginSuccess]);
+
+  const handleDismissPopup = () => {
+    setLoginSuccess(null);
+  };
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -23,7 +36,7 @@ const Login = ({ setToken, apiUrl}) => {
       setToken(token);
       setLoginSuccess(true);
       setTimeout(() => {
-      navigate('/dashboard');
+        navigate('/dashboard');
       }, 2000);
     } catch (error) {
       console.error('Login error:', error);
@@ -82,7 +95,7 @@ const Login = ({ setToken, apiUrl}) => {
         )}
 
         {loginSuccess !== null && (
-          <div className='fixed inset-0 bg-background-700 bg-opacity-75 flex justify-center items-center z-50'>
+          <div onClick={handleDismissPopup} className='fixed inset-0 bg-background-700 bg-opacity-75 flex justify-center items-center z-50'>
             <div className='bg-primary-50 p-6 rounded-md'>
               <p className='text-center text-2xl text-primary-500'>
                 {loginSuccess ? 'Login Successful!' : 'Login Failed! Please try again.'}
