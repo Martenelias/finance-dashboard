@@ -43,6 +43,13 @@
 - **Database**
   ***[phpmyadmin](https://www.phpmyadmin.co/)***
 
+## LOGIN INFO
+
+username: maali@maasikas.ee
+password: maali
+
+Loading time up to 50seconds... due to renders free plans!
+
 ## Installation
 
 - **Clone**
